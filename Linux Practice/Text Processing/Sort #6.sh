@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sort -t $'\t' -k 2
+sort -t $'\t' -k 2 -n

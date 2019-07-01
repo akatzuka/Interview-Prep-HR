@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sort -t $'|' -k 2 -r
+sort -t $'|' -k 2 -rn
