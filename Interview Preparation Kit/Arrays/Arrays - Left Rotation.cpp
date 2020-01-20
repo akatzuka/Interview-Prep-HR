@@ -7,28 +7,29 @@ vector<string> split_string(string);
 // Complete the rotLeft function below.
 vector<int> rotLeft(vector<int> a, int d)
 {
-    int size = a.size();
+//Function to left rotate array a by d number of rotations
+
     vector<int> temp;
-    for(int i = 0; i < 1; i++)
+    int rest = a.size() - d;
+    for(int i = 0; i < d; i++)
     {
-        for(int j = 0; j < size; j++)
+        temp.push_back(a[i]);
+    }
+    for(int i = 0; i < a.size(); i++)
+    {
+        if(i < rest)
         {
-            if(j == 0)
-            {
-                temp[size] = a[0];
-            }
-            else
-            {
-                temp[j] = a[j + 1];
-            }
+            a[i] = a[i + temp.size()];
         }
-        //a = temp;
+        else
+        {
+            a[i] = temp[i - rest];
+        }
     }
-    for(int q = 0; q < size; q++)
-    {
-        cout << temp[q] << endl;
-    }
+
     return a;
+
+    //We start by making a temporary vector to hold the number of elements equal to the number of left rotations. Next we shift the remaining elements in the original array over, overwriting the original elements. Finally we add back the original elements from the temp vector to the end of the original array and return them.
 }
 
 int main()
